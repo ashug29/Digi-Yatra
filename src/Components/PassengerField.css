@@ -1,0 +1,97 @@
+.passenger-field-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+.person-count{
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-self: flex-start;
+    margin-left: 4vw;
+}
+.full-name{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.passenger-field-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.passenger-field-capture-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid silver;
+    border-radius: 10px;
+    gap: 10px;
+    width: 80%;
+    height: 100%;
+}
+.instruction{
+    display:inline-block;
+    position: relative;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.instruction-expanded{
+    font-size: 13px;
+    border-radius: 50%;
+    height:15px;
+    width: 15px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    margin-left: 5px;
+}
+.instruction-tooltip {
+    display: none;
+    position: absolute;
+    background-color: grey;
+    color: white;
+    width: 19vw;
+    height: 7vh;
+    padding: 6px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.instruction:hover .instruction-tooltip {
+    display: block;
+}
+.motion-gif>img{
+    width: 10vw;
+    height: 10vh;
+    border-radius: 10px;
+}
+.webcam-button>img{
+    width: 25px;
+    height: 25px;
+}
+.webcam-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color:#c6e4fe;
+    width: 80%;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.webcam-button>span{
+    color: #007BFF;
+    font-size: 16px;
+}
+.webcam-button:hover{
+    background-color: #b0d2f7;
+}
+.webcam-button.wb-hide{
+    display: none;
+}

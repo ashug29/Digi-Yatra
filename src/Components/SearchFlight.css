@@ -1,0 +1,101 @@
+.search-flight-container-1{
+    width: 79vw;
+    background-image: url('../assets/Airplane.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    box-sizing: border-box;
+    margin-left: 21vw;
+    padding: 10px;
+    border-radius: 20px;
+    transition: width 0.8s, margin-left 0.8s;
+}
+.search-flight-container-1.main{
+    width: 100%;
+    margin-left: 0;
+}
+#non-view{
+    height: 100vh;
+}
+.search-flight-container-2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+.search-flight-container-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+    padding: 40px 0px 20px 0px;
+    margin: 0px 50px 0px 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.search-flight-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    height: 15vh;
+}
+.search-flight-input{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.two-way {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.two-way img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+}
+.two-way:hover{
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(221, 220, 220);
+    filter: brightness(110%);
+}
+.two-way:active{
+    background-color: rgb(255, 194, 254);
+    filter: brightness(110%);
+}
+
+.search-flight-button {
+    width: 70px;
+    height: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+    cursor: pointer;
+}
+.search-flight-button img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+.search-flight-button:hover{
+    background: linear-gradient(to left,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+}
+.options{
+    display: none;
+}

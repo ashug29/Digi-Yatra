@@ -1,0 +1,67 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    position: fixed;
+    z-index: 2;
+}
+.sidebar {
+    width: 18vw;
+    height: 97vh;
+    background-color: white;
+    color: grey;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.8s;
+}
+.sidebar-inactive{
+    width: 0;
+    height: 97vh;
+    transition: all 0.8s;
+}
+.toggle, .toggle-inactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height:30px;
+    width: 30px;
+    cursor: pointer;
+    background-color: white;
+    color: grey;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.toggle{
+    margin: 30px 0px 0px -15px;
+}
+.toggle-inactive{
+    margin: 30px 0px 0px 0px;
+}
+.toggle:hover, .toggle-inactive:hover{
+    filter: brightness(90%);
+}
+.sidebar-list{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    gap: 5px;
+}
+.sidebar-list-inactive{
+    display: none;
+}
+.sidebar-buttons{
+    border-radius: 10px;
+    color: black;
+    padding: 15px;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.sidebar-buttons:hover,.sidebar-buttons.active{
+    background:linear-gradient(to right,rgba(249, 87, 177, 0.8),rgba(239, 113, 64, 0.8));
+    color: white;
+    transition: color 1s;
+    filter: opacity(80%);
+}
+

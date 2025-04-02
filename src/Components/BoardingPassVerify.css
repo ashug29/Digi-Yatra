@@ -1,0 +1,197 @@
+
+  .verify-bp{
+    width: 79vw;
+    height: 100vh;
+    background-image: url('../assets/Airplane.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    box-sizing: border-box;
+    margin-left: 21vw;
+    padding: 10px;
+    border-radius: 20px;
+    transition: width 0.8s, margin-left 0.8s;
+  }
+  .verify-bp.main{
+    width: 100%;
+    margin-left: 0;
+  }
+  .display-popup-verified{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: white;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .verfied-names{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 15px;
+    width: 25vw;
+    padding: 10px;
+    background-color:#ECFFDC;
+    border-radius: 5px;
+  }
+  .verfied-names>img{
+    width: 30px;
+    height: auto;
+  }
+  .verfied-names>div{
+    padding-top: 6px;
+  }
+  .display-screen-container-verified{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    gap: 30px;
+    border-radius: 10px;
+}
+.display-screen-title-verified{
+    color: green;
+    font-size: 20px;
+}
+.display-screen-buttons-verified>div{
+    background-color: white;
+    color: #007BFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 60px;
+    height: 5px;
+    cursor: pointer;
+}
+.display-screen-buttons-verified>div:nth-child(1){
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+.display-screen-buttons-verified>div:nth-child(2):hover{
+    filter: brightness(95%);
+}
+.display-screen-buttons-verified{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+    justify-content: flex-end;
+}
+.verify-bp-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    height: 15vh;
+}
+.name-button-verfied>div:nth-child(2)>img{
+  width: 30px;
+  height: auto;
+}
+.name-button-verfied>div:nth-child(2){
+  background:linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 5px;
+  padding: 8px;
+  width: 18vw;
+  height: auto;
+  cursor: pointer;
+}
+.name-button-verfied>div:nth-child(2)>span{
+  padding-top: 5px;
+}
+.name-button-verfied{
+  display: flex;
+  flex-direction: row;
+  gap: 10vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.passenger-verify-button{
+  background:linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+  font-weight: bold;
+  font-size: 18px;
+  width: 15vw;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.passenger-verify{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 50vh;
+}
+.webcam-popup{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: white;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+}
+.webcam-popup-container{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    gap: 30px;
+    border-radius: 10px;
+}
+.webcam-popup-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.webcam-popup-button{
+    background-color: white;
+    color: #007BFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 60px;
+    height: 5px;
+    cursor: pointer;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+.webcam-popup-frame{
+  background:linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media print {
+  @page {
+    size: 320mm 350mm;
+    margin: 0;
+  }
+  .display-screen-title-verified,.display-screen-buttons-verified{
+    display: none;
+  }
+}

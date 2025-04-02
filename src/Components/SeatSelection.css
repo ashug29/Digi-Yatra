@@ -1,0 +1,124 @@
+.seat-selection{
+    width: 79vw;
+    height: 100%;
+    background-image: url('../assets/Airplane.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: content-box; 
+    box-sizing: border-box;
+    margin-left: 21vw;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: width 0.8s, margin-left 0.8s;
+}
+.seat-selection.main{
+    width: 100%;
+    margin-left: 0;
+}
+.seat-selection-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    height: 15vh;
+}
+.selection-previous,.selection-next{
+    width: 110px;
+    height: 40px; 
+    display: flex;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 20px;
+    background: linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+    cursor: pointer;
+}
+.selection-previous:hover,.selection-next:hover{
+    background: linear-gradient(to left,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+}
+.selection-previous-next{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+.aircraft{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+.aircraft-face{
+    width: 28vw;
+    height: 90vh;
+    background-color: white;
+    border-radius: 100% 100% 0 0;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+}
+.aircraft-seats{
+    width: 28vw;
+    height: 100%;
+    background-color: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 5px 10px 5px 10px;
+    position: relative;
+    margin-top: 25vw;
+    z-index: 3;
+}
+.rows{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 0px 5px 0px;
+}
+.row-left,.row-right{
+    display: flex;
+    flex-direction: column;
+}
+.row-right-seats>img,.row-left-seats>img{
+    width: 28px;
+    cursor: pointer;
+}
+.row-right-seats,.row-left-seats{
+    display: flex;
+    gap: 20px;
+}
+.row-left-no,.row-right-no{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.aircraft-vision{
+    width: 28vw;
+    height: 20vh;
+    padding: 10px;
+    background-color: grey;
+    clip-path: polygon(10% 100%, 20% 60%, 50% 40%, 80% 60%, 90% 100%, 60% 70%, 40% 70%);
+    position: absolute;
+    margin-top: 50px;
+    z-index: 4;
+}
+.aircraft-wings{
+    width: 85vw;
+    height: 60vh;
+    background-color: whitesmoke;
+    clip-path: polygon(5% 95%, 15% 60%, 50% 20%, 85% 60%, 95% 95%, 80% 75%, 20% 75%);
+    position: absolute;
+    z-index: 1;
+    margin-top: 30vw;
+}

@@ -1,0 +1,113 @@
+.passenger-details{
+    width: 79vw;
+    height: 100%;
+    background-image: url('../assets/Airplane.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: content-box; 
+    box-sizing: border-box;
+    margin-left: 21vw;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    transition: width 0.8s, margin-left 0.8s;
+}
+.passenger-details.main{
+    width: 100%;
+    margin-left: 0;
+}
+.passenger-details-container-2>.profile>div{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: blueviolet;
+    margin-top: 20px;
+}
+.passenger-details-container-2>.profile>div>img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.passenger-details-container-2>.title{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: black;
+}
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.passenger-details-container-2{
+    background-color: white;
+    width: 500px;
+    height: 100%;
+    border-radius: 20px;
+    margin: 20px 0px 20px 0px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.previous-next-button>.previous,.previous-next-button>.next{
+    width: 120px;
+    height: 40px; 
+    display: flex;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 20px;
+    background: linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+    cursor: pointer;
+}
+.previous-next-button>.previous:hover,.previous-next-button>.next:hover{
+    background: linear-gradient(to left,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+}
+.previous-next-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+.passenger-detail-submit{
+    background: linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+    display: flex;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    margin-top: auto;
+    padding: 10px;
+    border-radius: 0 0 20px 20px;
+    font-weight: bold;
+}
+.passenger-detail-submit:hover{
+    background: linear-gradient(to left,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+}
+.add-passenger{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    cursor: pointer;
+}
+.add-passenger:hover{
+    background-color: #d6d6d6;
+    filter: brightness(110%);
+}

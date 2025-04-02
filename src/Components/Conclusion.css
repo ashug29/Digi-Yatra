@@ -1,0 +1,44 @@
+.conclusion{
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: transparent;
+}
+.conclusion-container{
+    width: 79vw;
+    height: 100vh;
+    box-sizing: border-box;
+    margin-left: 21vw;
+    padding: 30px;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.8s, margin-left 0.8s;
+}
+.conclusion-container.main{
+    width: 100%;
+    margin-left: 0;
+}
+.conclusion-title{
+    display: flex;
+    justify-content: center;
+}
+.conclusion-previous>div{
+    width: 120px;
+    height: 40px; 
+    display: flex;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 20px;
+    background: linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+    cursor: pointer;
+    margin: 50px auto 70px auto;
+}
+.conclusion-previous>div:hover{
+    background: linear-gradient(to left,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+}

@@ -1,0 +1,154 @@
+
+  .collect-bp{
+    width: 79vw;
+    height: 100vh;
+    background-image: url('../assets/Airplane.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    box-sizing: border-box;
+    margin-left: 21vw;
+    padding: 10px;
+    border-radius: 20px;
+    transition: width 0.8s, margin-left 0.8s;
+  }
+  .collect-bp.main{
+    width: 100%;
+    margin-left: 0;
+  }
+  .display-popup {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: white;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .display-screen-container{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    gap: 30px;
+    border-radius: 10px;
+}
+.display-screen-title{
+    color: red;
+    font-size: 20px;
+}
+.display-screen-buttons>div{
+    background-color: white;
+    color: #007BFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 60px;
+    height: 5px;
+    cursor: pointer;
+}
+.display-screen-buttons>div:nth-child(1){
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+.display-screen-buttons>div:nth-child(2):hover{
+    filter: brightness(95%);
+}
+.display-screen-buttons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+    justify-content: flex-end;
+}
+.collect-bp-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    height: 15vh;
+}
+.name-button>div:nth-child(2)>img{
+  width: 30px;
+  height: auto;
+}
+.name-button>div:nth-child(2){
+  background:linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 5px;
+  padding: 8px;
+  width: 18vw;
+  height: auto;
+  cursor: pointer;
+}
+.name-button>div:nth-child(2)>span{
+  padding-top: 5px;
+}
+.name-button{
+  display: flex;
+  flex-direction: row;
+  gap: 10vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.name-button>div:nth-child(1){
+  font-size: 20px;
+  font-weight: bold;
+  width: 5vw;
+}
+.check-in-button{
+  background:linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+  font-weight: bold;
+  font-size: 18px;
+  width: 8vw;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.bp-previous-button{
+  background:linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+  font-weight: bold;
+  font-size: 18px;
+  width: 8vw;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.check-in-previous{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 50vh;
+}
+@media print {
+  @page {
+    size: 320mm 350mm;
+    margin: 0;
+  }
+  .display-screen-title,.display-screen-buttons{
+    display: none;
+  }
+}
+

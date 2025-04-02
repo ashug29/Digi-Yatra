@@ -1,0 +1,72 @@
+.flight-options{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    border-radius: 20px;
+    width: 60vw;
+    background-color: white;
+    padding: 20px;
+}
+.flight-options-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+}
+.flight-options>.airline>img{
+    width: 120px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.flight-options>.price-select{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.flight-options>.price-select>div{
+    width: 120px;
+    height: 40px; 
+    display: flex;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 20px;
+    background: linear-gradient(to right,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+    cursor: pointer;
+}
+.flight-options>.price-select>div:hover{
+    background: linear-gradient(to left,rgb(191, 64, 191),rgba(233, 38, 145, 0.8));
+}
+.flight-options>.price-select>span{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.departure, .arrival, .duration-nonstop{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.departure, .arrival{
+    gap: 20px;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.duration-nonstop>hr{
+    border: none;
+    height: 3px;
+    background-color: black;
+    width: 110px;
+}
+.flight-options-container.none{
+    display: none;
+}
