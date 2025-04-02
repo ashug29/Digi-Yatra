@@ -1,9 +1,14 @@
 import "./FlightOption.css"
 import { airports } from "./Airports";
 import {Flights} from './Flights'
+import akasa from '../Airlines/akasa.png'
+import indigo from '../Airlines/IndiGo.png'
+import spicejet from '../Airlines/spicejet.png'
+import airindia from '../Airlines/Air-india.png'
 import { useNavigate } from "react-router-dom";
 export function FlightOption({code1="XYZ",code2="XYZ",display=false}){
     const airportData=sessionStorage.getItem('flight') ? JSON.parse(sessionStorage.getItem('flight')) : {};
+    const imgpath=[akasa,indigo,spicejet,airindia]
     const navigate = useNavigate();
     airports.map((x)=>{
         if(x.city===airportData.from){
@@ -18,10 +23,10 @@ export function FlightOption({code1="XYZ",code2="XYZ",display=false}){
     return(
         <div className={`flight-options-container ${display ? "" : "none"}`}>
         {
-        Flights.map((x)=>(
+        Flights.map((x,index)=>(
         <>
         <div className="flight-options">
-            <div className="airline"><img src={x.airline}/></div>
+            <div className="airline"><img src={imgpath[index]}/></div>
             <div className="content">
                 <div className="departure">
                     <span>{x.departure}</span>

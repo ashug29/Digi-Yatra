@@ -1,5 +1,6 @@
 import React from "react";
 import { TextField, Stack, Autocomplete } from "@mui/material";
+import flightimg from '../assets/flight.png'
 
 export default function Input_Dropdown_Button({ data, placeholder, width, type,onChange}) {
   return (
@@ -13,7 +14,7 @@ export default function Input_Dropdown_Button({ data, placeholder, width, type,o
         renderOption={(props, option) => (
           <div {...props} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "15px"}}>
             <img 
-              src={option.logo} 
+              src={flightimg} 
               alt={option.title} 
               width="30" 
               height="30" 

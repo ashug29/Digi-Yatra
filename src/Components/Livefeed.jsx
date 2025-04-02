@@ -1,21 +1,26 @@
-import React, { useRef, useState, useEffect } from 'react';
-import Webcam from 'react-webcam';
-import * as faceapi from 'face-api.js';
+import React, { useRef, useState, useEffect } from "react";
+import Webcam from "react-webcam";
+import * as faceapi from "face-api.js";
 
 function Livefeed({ onVerification }) {
   const webcamRef = useRef(null);
   const [loading, setLoading] = useState(true);
 
+  const MODEL_URL = `${window.location.origin}/Digi-Yatra/models`;
+
   useEffect(() => {
     const loadModels = async () => {
-      await Promise.all([
-        faceapi.nets.ssdMobilenetv1.loadFromUri('/models'),
-        faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-        faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-      ]);
-      setLoading(false);
+      try {
+        await Promise.all([
+          faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL),
+          faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL),
+          faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL),
+        ]);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error loading models:", error);
+      }
     };
-
     loadModels();
   }, []);
 
@@ -30,19 +35,22 @@ function Livefeed({ onVerification }) {
               if (detection) {
                 const landmarks = await faceapi.detectFaceLandmarks(video);
                 const descriptor = await faceapi.computeFaceDescriptor(video, landmarks);
-                const details = JSON.parse(sessionStorage.getItem('details')) || [];
+                const details = JSON.parse(sessionStorage.getItem("details")) || [];
+
                 let bestMatch = null;
                 let bestDistance = Infinity;
+
                 for (const person of details) {
                   for (const imageBase64 of person.images) {
-                    if (!imageBase64.startsWith('data:image/jpeg;base64,')) {
-                      continue;
-                    }
+                    if (!imageBase64.startsWith("data:image/jpeg;base64,")) continue;
+
                     const image = await faceapi.fetchImage(imageBase64);
                     const referenceDetection = await faceapi.detectSingleFace(image, new faceapi.SsdMobilenetv1Options());
+
                     if (referenceDetection) {
                       const referenceLandmarks = await faceapi.detectFaceLandmarks(image);
                       const referenceDescriptor = await faceapi.computeFaceDescriptor(image, referenceLandmarks);
+
                       const distance = faceapi.euclideanDistance(descriptor, referenceDescriptor);
                       if (distance < bestDistance && distance < 1) {
                         bestDistance = distance;
@@ -51,13 +59,14 @@ function Livefeed({ onVerification }) {
                     }
                   }
                 }
+
                 if (bestMatch) {
                   onVerification(bestMatch);
                   clearInterval(interval);
                 }
               }
             } catch (error) {
-              console.error('Face verification error:', error);
+              console.error("Face verification error:", error);
             }
           }
         }

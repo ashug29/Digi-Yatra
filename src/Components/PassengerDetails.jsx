@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { PassengerField } from './PassengerField'
 import { useContext } from "react";
 import { Toggle } from "./GlobalState";
+import person from '../assets/person.png'
 export function PassengerDetails(){
     const navigate = useNavigate();
     const [toggle,setToggle]=useContext(Toggle)
@@ -50,7 +51,7 @@ export function PassengerDetails(){
     return(
         <div className={`passenger-details ${toggle?"":"main"}`}>
             <div className='passenger-details-container-2'>
-                <div className='profile'><div><img src='src/assets/person.png'/></div></div>
+                <div className='profile'><div><img src={person}/></div></div>
                 <div className='title'>Enter Details</div>
                 {[...Array(passengerCount)].map((_, i) => (
                     <PassengerField key={i} index={i+1} onChange={(data) => handleData(data, i)} />

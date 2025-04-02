@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Toggle } from "./GlobalState";
+import normalseat from '../assets/NormalSeat.png'
+import selectedseat from '../assets/SelectedSeat.png'
 import './SeatSelection.css';
 export function SeatSelection(){
     const [toggle,setToggle]=useContext(Toggle)
     const navigate = useNavigate();
-    const imageSource = 'src/assets/NormalSeat.png';
     const count=Number(sessionStorage.getItem('count'))
     const [list,setlist]=useState([])
     const handleClick = (event) => {
@@ -15,20 +16,20 @@ export function SeatSelection(){
         setlist((prevList) => {
             const newSelection = !prevList.includes(seatKey);
             n.src = newSelection 
-                ? "src/assets/SelectedSeat.png" 
-                : "src/assets/NormalSeat.png";
+                ? selectedseat 
+                : normalseat;
 
                 if (newSelection) {
                     return prevList.length < count 
                         ? [...prevList, seatKey] 
                         : (() => {
                             const firstElement = prevList[0];
-                            document.querySelector(`[data-key='${firstElement}']`)?.setAttribute("src", "src/assets/NormalSeat.png");
+                            document.querySelector(`[data-key='${firstElement}']`)?.setAttribute("src", normalseat);
                             return prevList.slice(1).concat(seatKey);
                         })();
                 }  
             else {
-                n.src = imageSource;
+                n.src = normalseat;
                 return prevList.filter((seat) => (seat !== seatKey));
             }
         });
@@ -42,9 +43,9 @@ export function SeatSelection(){
         <div className='rows'>
             <div className='row-left'>
                 <div className='row-left-seats'>
-                    <img src={imageSource} data-key={`${x}A`} className='seat-image' onClick={handleClick}/>
-                    <img src={imageSource} data-key={`${x}B`} className='seat-image' onClick={handleClick}/>
-                    <img src={imageSource} data-key={`${x}C`} className='seat-image' onClick={handleClick}/>
+                    <img src={normalseat} data-key={`${x}A`} className='seat-image' onClick={handleClick}/>
+                    <img src={normalseat} data-key={`${x}B`} className='seat-image' onClick={handleClick}/>
+                    <img src={normalseat} data-key={`${x}C`} className='seat-image' onClick={handleClick}/>
                 </div>
                 <div className='row-left-no'>
                     <div className='seat-no'>{`${x}A`}</div>
@@ -54,9 +55,9 @@ export function SeatSelection(){
             </div>
             <div className='row-right'>
                 <div className='row-right-seats'>
-                    <img src={imageSource} data-key={`${x}D`} className='seat-image' onClick={handleClick}/>
-                    <img src={imageSource} data-key={`${x}E`} className='seat-image' onClick={handleClick}/>
-                    <img src={imageSource} data-key={`${x}F`} className='seat-image' onClick={handleClick}/>
+                    <img src={normalseat} data-key={`${x}D`} className='seat-image' onClick={handleClick}/>
+                    <img src={normalseat} data-key={`${x}E`} className='seat-image' onClick={handleClick}/>
+                    <img src={normalseat} data-key={`${x}F`} className='seat-image' onClick={handleClick}/>
                 </div>
                 <div className='row-right-no'>
                     <div className='seat-no'>{`${x}D`}</div>

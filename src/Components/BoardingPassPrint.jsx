@@ -4,6 +4,7 @@ import { BoardingPass } from './BoardingPass.jsx';
 import { ErrorBoundary } from './ErrorBoundary.jsx';
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import boardingpass from '../assets/BoardingPass.png'
 import { Toggle } from "./GlobalState";
 export function BoardingPassPrint() {
   const [toggle,setToggle]=useContext(Toggle)
@@ -31,7 +32,7 @@ export function BoardingPassPrint() {
         <div key={index} className="name-button">
           <div>{i.firstName}</div>
           <div>
-            <img src="src/assets/BoardingPass.png" alt="Boarding Pass" />
+            <img src={boardingpass} alt="Boarding Pass" />
             <span onClick={() => handleVisibility(index)}>BOARDING PASS</span>
           </div>
           {visibleIndex === index && (

@@ -27,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/search-flight"/>}/>
         <Route path="/search-flight" element={<ErrorBoundary><SearchFlight/></ErrorBoundary>} />
-        <Route path="/conclusion" element={<Conclusion/>} />
+        <Route path="/conclusion" element={<ErrorBoundary><Conclusion/></ErrorBoundary>} />
         <Route path="/passenger-details" element={<ErrorBoundary><PassengerDetails/></ErrorBoundary>}/>
         <Route path="/passenger-field" element={<ErrorBoundary><PassengerField/></ErrorBoundary>}/>
         <Route path="/boarding-pass" element={<ErrorBoundary><BoardingPassPrint/></ErrorBoundary>} />

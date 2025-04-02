@@ -6,6 +6,8 @@ import {airports} from "./Airports";
 import { useContext } from "react";
 import { Toggle } from "./GlobalState";
 import DateButton from "./DateButton";
+import viceversa from "../assets/vice-versa.png"
+import searchbutton from "../assets/search-button.png"
 export function SearchFlight(){
     const [toggle,setToggle]=useContext(Toggle)
     const [list, setList] = useState({
@@ -46,11 +48,11 @@ export function SearchFlight(){
             <div className="search-flight-container-3">
             <div className="search-flight-input">
                <Input_Dropdown_Button data={airports} placeholder={"From"} width={300} type={"text"} onChange={(value) => handleValue(value, "from")}/>
-                <div className="two-way"><img src="src/assets/vice-versa.png"/></div>
+                <div className="two-way"><img src={viceversa}/></div>
                 <Input_Dropdown_Button data={airports} placeholder={"To"} width={300} type={"text"} onChange={(value) => handleValue(value, "to")} />
             </div>
             <DateButton placeholder={"Date"} onChange={handleDate}></DateButton>
-            <div className="search-flight-button" onClick={()=>setviewflight(true)}><img src="src/assets/search-button.png"/></div>
+            <div className="search-flight-button" onClick={()=>setviewflight(true)}><img src={searchbutton}/></div>
             </div>
             <FlightOption display={viewflight}></FlightOption>
         </div>

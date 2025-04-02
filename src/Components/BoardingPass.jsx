@@ -1,12 +1,14 @@
 import './BoardingPass.css'
 import QRCode from 'react-qr-code'
+import flight1 from '../assets/flight-1.png'
+import approved from '../assets/approved.png'
 export function BoardingPass({firstname=undefined,lastname=undefined,source=undefined,destination=undefined,seat=undefined,date=undefined,verified=false}){
     return(
         <div className='overlap'>
         <table id="BoardingPass">
         <tr className='top-row'>
-            <th className='top-row-content-1'><img src="src/assets/flight-1.png"/>Boarding Pass (Web Check In)</th>
-            <th className='top-row-content-2'>Your Departure Terminal is T1<img src="src/assets/flight-1.png"/></th>
+            <th className='top-row-content-1'><img src={flight1}/>Boarding Pass (Web Check In)</th>
+            <th className='top-row-content-2'>Your Departure Terminal is T1<img src={flight1}/></th>
         </tr>
         <tr className='second-row'>
         <td className='part-1'>
@@ -97,7 +99,7 @@ export function BoardingPass({firstname=undefined,lastname=undefined,source=unde
         </tr>
        </table>
        { verified && (
-       <img src='src/assets/approved.png' className='approved'/>
+       <img src={approved} className='approved'/>
        )}
        </div>
     )
