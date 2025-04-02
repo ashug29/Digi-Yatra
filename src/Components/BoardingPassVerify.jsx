@@ -12,7 +12,7 @@ export function BoardingPassVerify() {
   const [toggle] = useContext(Toggle);
   const navigate = useNavigate();
 
-  const flight = JSON.parse(sessionStorage.getItem("flight")) || [];
+  const flight = sessionStorage.getItem('flight') ? JSON.parse(sessionStorage.getItem('flight')) : {};
   const Seats = JSON.parse(sessionStorage.getItem("seats")) || [];
   const details = JSON.parse(sessionStorage.getItem("details")) || [];
 
@@ -80,9 +80,9 @@ export function BoardingPassVerify() {
                 </div>
                 <ErrorBoundary>
                   <BoardingPass
-                    source={flight[0]}
-                    destination={flight[1]}
-                    date={flight[2]}
+                    source={flight.from}
+                    destination={flight.to}
+                    date={flight.date}
                     firstname={i.firstName}
                     lastname={i.lastName}
                     verified={true}
