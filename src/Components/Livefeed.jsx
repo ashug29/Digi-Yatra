@@ -6,7 +6,7 @@ function Livefeed({ onVerification }) {
   const webcamRef = useRef(null);
   const [loading, setLoading] = useState(true);
 
-  const MODEL_URL = `${window.location.origin}/Digi-Yatra/models`;
+  const MODEL_URL = `${window.location.origin}/models`;
 
   useEffect(() => {
     const loadModels = async () => {
